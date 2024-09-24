@@ -10,6 +10,7 @@ const app = express();
 const port = process.env.PORT || 8080;
 
 app.use(express.json()); //use Case ?
+app.use("/", userRoutes);
 app.use("/api/contacts", contactRoutes);
 app.use("/api/users", userRoutes);
 app.use(errorHandler);
