@@ -14,7 +14,6 @@ const getContact = asyncHandle(async (req, res) => {
 
 //Create
 const createContact = asyncHandle(async (req, res) => {
-  console.log(req.body, "body");
   const { name, email, phone } = req.body;
   if (!name || !email || !phone) {
     res.status(400);
@@ -24,7 +23,7 @@ const createContact = asyncHandle(async (req, res) => {
     name,
     email,
     phone,
-    user_id: req.user.id,
+    user_id: req.user.id
   });
   res.status(201).json(contact);
   // res.status(201).json({ message: "Create Contact" });
@@ -82,5 +81,5 @@ module.exports = {
   createContact,
   updateContact,
   deleteContact,
-  getSingleContact,
+  getSingleContact
 };
